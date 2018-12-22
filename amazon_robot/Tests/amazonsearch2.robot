@@ -37,6 +37,6 @@ User must sign in to check out a pair of headphones "Amazon search test "
    click button  id=add-to-cart-button
    wait until page contains  Cart subtotal
   # page should contain button  Proceed to checkout
-    capture page screenshot  Screenshots/cart_pic1.png
+    capture page screenshot  /Screenshots/cart_pic1.png
     Close Browser
 *** Keywords ***
