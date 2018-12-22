@@ -39,5 +39,4 @@ User must sign in to check out a pair of headphones "Amazon search test "
   # page should contain button  Proceed to checkout
     capture page screenshot  Screenshots/cart_pic1.png
     Close Browser
-
 *** Keywords ***
