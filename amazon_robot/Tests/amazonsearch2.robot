@@ -20,7 +20,20 @@ User must sign in to check out "Amazon search test 2"
     wait until page contains  COWIN E7
    click element  xpath=//*[@id="result_0"]/div/div/div/div[1]/div/div/a/img
    wait until page contains   customer reviews
-   capture page screenshot
+
+   capture page screenshot  LOGDIR/Screenshots/headphones_pic1.png
+   click link  id=mbbPopoverLink2
+   wait until page contains  Protection
+   page should contain button  No Thanks
+   page should contain button  Add
+   capture page screenshot  LOG DIR/Screenshots/protectplan_pic1.png
+   click button  id=mbbNoCoverage2-announce
+   wait until page contains  In Stock
+   click button  id=add-to-cart-button
+   page should contain button  Proceed to checkout
+
+   wait until page contains  Added to Cart
+    capture page screenshot  LOGDIR/cart_pic1.png
     Close Browser
 
 *** Keywords ***
