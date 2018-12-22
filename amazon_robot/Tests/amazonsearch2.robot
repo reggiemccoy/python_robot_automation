@@ -19,7 +19,8 @@ User must sign in to check out "Amazon search test 2"
     Wait Until Page Contains   "COWIN E7"
     wait until page contains  COWIN E7
    click element  xpath=//*[@id="result_0"]/div/div/div/div[1]/div/div/a/img
-
+   wait until page contains   customer reviews
+   capture page screenshot
     Close Browser
 
 *** Keywords ***
