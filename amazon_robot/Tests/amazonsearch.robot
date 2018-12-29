@@ -22,7 +22,7 @@ Search for Blackmagic camera
     click element  xpath=//*[@id="result_2"]/div/div/div/div[1]/div/div/a/img
   #  Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
     Wait Until Page Contains  Blackmagic Design Pocket Cinema Camera 4K
-
+   capture page screenshot  Screenshots/blackmagic_camera.png
 
 *** Test Cases ***
 User must sign in to check out "Amazon search test"
@@ -33,7 +33,7 @@ User must sign in to check out "Amazon search test"
     Input Text  id=twotabsearchtextbox  Ferrari 458
     Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
     Wait Until Page Contains  results for "Ferrari 458"
-
+    capture page screenshot  Screenshots/ferrari_458.png
 
 *** Test Cases ***
  Add the Ferrari to the cart
