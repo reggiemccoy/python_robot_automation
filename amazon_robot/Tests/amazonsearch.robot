@@ -56,10 +56,6 @@ Verify the user can do a blank search
     location should be  https://www.amazon.com/ref=nb_sb_noss_null
 
 
-
-
-
-
 *** Test Cases ***
 Verify the user can do a invalid search
   [Documentation]  Verify the user can do a invalid search
@@ -71,11 +67,6 @@ Verify the user can do a invalid search
     Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
     sleep  3s
     wait until element is visible  id=noResultsTitle
-
-
-
-
-
 
 
 
