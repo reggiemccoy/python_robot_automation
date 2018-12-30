@@ -15,19 +15,13 @@ Verify the homepage navigation button
 
     Begin Web Test (common)
     Navigate to URL
+    Input Search for toy
+    Take screenshot of the toy
+    Complete test
 
 
 
 
-    [Documentation]  This is some basic info about the test
-    [Tags]  Smoke
-    # Open Browser  http://www.amazon.com  chrome
-    # Wait Until Page Contains  Your Amazon.com
-    Input Text  id=twotabsearchtextbox  Ferrari 458
-    Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
-    Wait Until Page Contains  results for "Ferrari 458"
-    capture page screenshot  Screenshots/ferrari_458.png
-    close browser
 
 
 
@@ -36,8 +30,17 @@ Verify the homepage navigation button
 Begin Web Test (common)
     Open Browser  about:blank  chrome
 
-
 Navigate to URL
     go to  http://www.amazon.com
      wait until page contains element  id=nav-your-amazon
 
+Input Search for toy
+    Input Text  id=twotabsearchtextbox  Ferrari 458
+    Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
+    Wait Until Page Contains  results for "Ferrari 458"
+
+Take screenshot of the toy
+    capture page screenshot  Screenshots/ferrari_458.png
+
+Complete test
+    close browser
