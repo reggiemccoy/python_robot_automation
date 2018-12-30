@@ -12,8 +12,10 @@ Library  SeleniumLibrary
 Verify the homepage navigation button
   [Documentation]  The following test cases verifies homepage button is present
     [Tags]  Smoke
-     Open Browser  http://www.amazon.com  chrome
-     wait until page contains element  id=nav-your-amazon
+
+    Begin Web Test (common)
+    Navigate to URL
+
 
 
 *** Test Cases ***
@@ -111,10 +113,11 @@ User must sign in to check out "Amazon search test"
 
 *** Keywords ***
 
+Begin Web Test (common)
+    Open Browser  about:blank  chrome
 
 
-
-
-
-
+Navigate to URL
+    go to  http://www.amazon.com
+     wait until page contains element  id=nav-your-amazon
 
