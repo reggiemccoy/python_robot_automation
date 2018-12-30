@@ -27,10 +27,24 @@ Verify the homepage navigation button
     amazongui.Input Search for toy
     amazongui.Take screenshot of the toy
 
+*** Test Cases ***
+Verify the user can do a blank search
+  [Documentation]  Verify the user can do a blank search
+    [Tags]  Regression
+    amazongui.Navigate to URL
+    Perform a blank search
 
+*** Test Cases ***
+Verify the user performs an invalid search
+  [Documentation]  Verify the user can do a blank search
+    [Tags]  Regression
+   amazongui.Navigate to URL
+   Perform a invalid search
 
-
-
-
-
+*** Test Cases ***
+Verify the user can perform a search for a black magic 4k camera
+  [Documentation]  Verify the user can do a blank search
+    [Tags]  Regression
+   amazongui.Navigate to URL
+   Perform a search for black magic 4k camera
 
