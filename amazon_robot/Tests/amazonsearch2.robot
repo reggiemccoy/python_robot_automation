@@ -13,6 +13,8 @@ Documentation  This is some basic info about the whole suite
 Resource  ../Resources/PO/amazongui.robot         # I needed to add the "..", for relative path
 Resource  ../Resources/PO/common.robot
 
+Test Setup  Begin Web Test
+Test Teardown  End Web Test
 
 # Copy/paste the line below into Terminal to execute:
 # robot -d results tests/amazongui.robot
@@ -26,11 +28,11 @@ Verify the homepage navigation button
     [Tags]  Smoke
 
 # Below I am calling keywords from the correct robot pagelogic /resources file
-    common.Begin Web Test
+
     amazongui.Navigate to URL
     amazongui.Input Search for toy
     amazongui.Take screenshot of the toy
-    common.End Web Test
+
 
 
 
