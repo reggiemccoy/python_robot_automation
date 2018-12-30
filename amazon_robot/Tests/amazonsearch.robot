@@ -7,13 +7,48 @@ Library  SeleniumLibrary
 
 *** Variables ***
 
+*** Test Cases ***
+Verify the homepage navigation button
+  [Documentation]  The following test cases verifies homepage button is present
+    [Tags]  Smoke
+     Open Browser  http://www.amazon.com  chrome
+     wait until page contains element  id=nav-your-amazon
+
+
+*** Test Cases ***
+Verify the homepage left-hand popup-menu
+  [Documentation]  The following test cases verifies homepage left-hand popup-menu
+    [Tags]  Smoke
+   #  Open Browser  http://www.amazon.com  chrome
+     wait until page contains element  id=nav-hamburger-menu
+     click element  id=nav-hamburger-menu
+     sleep  2s
+     click element  id=hmenu-canvas-background
+
+
+
+*** Test Cases ***
+Verify the homepage account list option
+  [Documentation]  The following test cases verifies homepage account list option
+    [Tags]  Smoke
+  #   Open Browser  http://www.amazon.com  chrome
+     wait until page contains element  id=nav-link-accountList
+
+
+*** Test Cases ***
+Verify the homepage orders option
+  [Documentation]  The following test cases verifies homepage orders option
+    [Tags]  Smoke
+   #  Open Browser  http://www.amazon.com  chrome
+     wait until page contains element  id=nav-orders
+
 
 
 *** Test Cases ***
 Search for Blackmagic camera
      [Documentation]  This is some basic info about the test
     [Tags]  Smoke
-    Open Browser  http://www.amazon.com  chrome
+   # Open Browser  http://www.amazon.com  chrome
     Wait Until Page Contains  Your Amazon.com
     Input Text  id=twotabsearchtextbox  blackmagic pocket cinema camera 4k
     Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
