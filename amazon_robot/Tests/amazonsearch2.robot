@@ -1,9 +1,6 @@
 *** Settings ***
 Documentation  This is some basic info about the whole suite
 Library  SeleniumLibrary
-
-Resource    Resource/amazon.robot
-Documentation  This is some basic info about the whole suite
 Resource  ../Resources/PO/amazongui.robot         # I needed to add the "..", for relative path
 Resource  ../Resources/PO/common.robot
 
