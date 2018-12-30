@@ -2,8 +2,20 @@
 Documentation  This is some basic info about the whole suite
 Library  SeleniumLibrary
 
+Resource    Resource/amazon.robot
+Documentation  This is some basic info about the whole suite
+# The following is telling the script were to pull the keyword information from
+Resource  Resources/amazon.robot
+Resource  Resources/common.robo
+Resource  Resources/amazongui.robot
+Resource  Resources/common.robot
+Documentation  This is some basic info about the whole suite
+Resource  ../Resources/amazongui.robot         # I needed to add the "..", for relative path
+Resource  ../Resources/common.robot
+
+
 # Copy/paste the line below into Terminal to execute:
-# robot -d results tests/amazon.robot
+# robot -d results tests/amazongui.robot
 
 *** Variables ***
 
@@ -13,11 +25,12 @@ Verify the homepage navigation button
   [Documentation]  The following test cases verifies homepage button is present
     [Tags]  Smoke
 
-    Begin Web Test (common)
-    Navigate to URL
-    Input Search for toy
-    Take screenshot of the toy
-    Complete test
+# Below I am calling keywords from the correct robot pagelogic /resources file
+    common.Begin Web Test
+    amazongui.Navigate to URL
+    amazongui.Input Search for toy
+    amazongui.Take screenshot of the toy
+    common.End Web Test
 
 
 
@@ -25,22 +38,3 @@ Verify the homepage navigation button
 
 
 
-*** Keywords ***
-
-Begin Web Test (common)
-    Open Browser  about:blank  chrome
-
-Navigate to URL
-    go to  http://www.amazon.com
-     wait until page contains element  id=nav-your-amazon
-
-Input Search for toy
-    Input Text  id=twotabsearchtextbox  Ferrari 458
-    Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
-    Wait Until Page Contains  results for "Ferrari 458"
-
-Take screenshot of the toy
-    capture page screenshot  Screenshots/ferrari_458.png
-
-Complete test
-    close browser
