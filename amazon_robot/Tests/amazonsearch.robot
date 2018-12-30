@@ -7,6 +7,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 
+
 *** Test Cases ***
 Verify the homepage navigation button
   [Documentation]  The following test cases verifies homepage button is present
@@ -53,6 +54,28 @@ Verify the user can do a blank search
     Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
     sleep  3s
     location should be  https://www.amazon.com/ref=nb_sb_noss_null
+
+
+
+
+
+
+*** Test Cases ***
+Verify the user can do a invalid search
+  [Documentation]  Verify the user can do a invalid search
+    [Tags]  Regression
+   #  Open Browser  http://www.amazon.com  chrome
+    Wait Until Page Contains  Your Amazon.com
+    Input Text  id=twotabsearchtextbox  '#'
+
+    Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
+    sleep  3s
+    wait until element is visible  id=noResultsTitle
+
+
+
+
+
 
 
 
