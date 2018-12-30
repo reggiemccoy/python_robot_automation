@@ -10,8 +10,8 @@ Resource  Resources/common.robo
 Resource  Resources/amazongui.robot
 Resource  Resources/common.robot
 Documentation  This is some basic info about the whole suite
-Resource  ../Resources/amazongui.robot         # I needed to add the "..", for relative path
-Resource  ../Resources/common.robot
+Resource  ../Resources/PO/amazongui.robot         # I needed to add the "..", for relative path
+Resource  ../Resources/PO/common.robot
 
 
 # Copy/paste the line below into Terminal to execute:
