@@ -45,6 +45,18 @@ Verify the homepage orders option
 
 
 *** Test Cases ***
+Verify the user can do a blank search
+  [Documentation]  Verify the user can do a blank search
+    [Tags]  Regression
+   #  Open Browser  http://www.amazon.com  chrome
+    sleep  3s
+    Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
+    sleep  3s
+    location should be  https://www.amazon.com/ref=nb_sb_noss_null
+
+
+
+*** Test Cases ***
 Search for Blackmagic camera
      [Documentation]  This is some basic info about the test
     [Tags]  Smoke
