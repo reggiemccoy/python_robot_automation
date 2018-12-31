@@ -6,8 +6,8 @@ Library  SeleniumLibrary
 # robot -d results tests/amazongui.robot
 
 *** Variables ***
-
-
+${SEARCH_TERM} =  Ferrari 458
+${SEARCH_TERM2}=  blackmagic pocket cinema camera 4k
 *** Test Cases ***
 Verify the homepage navigation button
   [Documentation]  The following test cases verifies homepage button is present
@@ -78,7 +78,7 @@ Search for Blackmagic camera
     [Tags]  Smoke
    # Open Browser  http://www.amazon.com  chrome
     Wait Until Page Contains  Your Amazon.com
-    Input Text  id=twotabsearchtextbox  blackmagic pocket cinema camera 4k
+    Input Text  id=twotabsearchtextbox  ${SEARCH_TERM2}
     Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
     sleep  3s
     wait until page contains element  xpath=//*[@id="result_2"]/div/div/div/div[1]/div/div/a/img
@@ -91,11 +91,12 @@ Search for Blackmagic camera
 User must sign in to check out "Amazon search test"
      [Documentation]  This is some basic info about the test
     [Tags]  Smoke
+
     # Open Browser  http://www.amazon.com  chrome
-    # Wait Until Page Contains  Your Amazon.com
-    Input Text  id=twotabsearchtextbox  Ferrari 458
+    Wait Until Page Contains  Your Amazon.com
+    Input Text  id=twotabsearchtextbox  ${SEARCH_TERM}
     Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
-    Wait Until Page Contains  results for "Ferrari 458"
+    Wait Until Page Contains  results for "${SEARCH_TERM}"
     capture page screenshot  Screenshots/ferrari_458.png
 
 *** Test Cases ***
