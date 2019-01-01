@@ -1,12 +1,14 @@
 *** Settings ***
 Documentation  This is some basic info about the whole suite
 Library  SeleniumLibrary
+Resource  ../Resources/config.robot
 
 # Copy/paste the line below into Terminal to execute:
 # robot -d results tests/amazongui.robot
 
 *** Variables ***
-${BROWSER} =  chrome
+# ${BROWSER} =  chrome
+# ${NAV_URL} =  http://www.amazon.com
 ${SEARCH_TERM} =  Ferrari 458
 ${SEARCH_TERM2}=  blackmagic pocket cinema camera 4k
 
