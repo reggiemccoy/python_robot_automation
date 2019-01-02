@@ -67,7 +67,6 @@ Verify the user can do a invalid search
 
     Wait Until Page Contains  Your Amazon.com
     Input Text  id=twotabsearchtextbox  '#'
-
     Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
     sleep  3s
     wait until element is visible  id=noResultsTitle
