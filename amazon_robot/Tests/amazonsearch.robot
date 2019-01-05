@@ -11,6 +11,7 @@ Resource  ../Resources/config.robot
 # ${NAV_URL} =  http://www.amazon.com
 ${SEARCH_TERM} =  Ferrari 458
 ${SEARCH_TERM2}=  blackmagic pocket cinema camera 4k
+${SEARCH_TERM3}=  Cooler Master MasterCase H500 ATX Mid-Tower
 
 *** Test Cases ***
 Verify the homepage navigation button
@@ -19,6 +20,20 @@ Verify the homepage navigation button
 
     Begin Web Test (common)
     Navigate to URL
+
+
+
+*** Test Cases ***
+ Banner Country
+    [Documentation]  The following test cases verifies the country of origin
+    [Tags]  Smoke
+    wait until element is visible  id=icp-touch-link-country
+  #  wait until page contains  id=a-popover-header-2
+  #  Click Element    xpath=(//input[@class="a-button-input"])[2]
+    capture page screenshot  Screenshots/Country/Region.png
+
+  #  close browser
+
 
 
 *** Test Cases ***
@@ -87,6 +102,28 @@ Search for Blackmagic camera
     Wait Until Page Contains  ${SEARCH_TERM2}
    capture page screenshot  Screenshots/blackmagic_camera.png
 
+
+
+*** Test Cases ***
+Search for Cooler Master MasterCase H500 ATX Mid-Tower
+     [Documentation]  This is some basic info about the test
+    [Tags]  Smoke
+
+    Wait Until Page Contains  Your Amazon.com
+    Input Text  id=twotabsearchtextbox  ${SEARCH_TERM3}
+    Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
+    Click Element    //img[@class="s-access-image cfMarker"]
+    # Click Button    xpath=//*[@id="result_0"]/div/div[2]/div/div[1]/div/div/a/img
+    wait until page contains  Cooler Master MasterCase H500 ATX Mid-Tower
+    #  Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
+    sleep  3s
+    capture page screenshot  Screenshots/H500ATX_camera.png
+
+
+
+
+
+
 *** Test Cases ***
 User must sign in to check out "Amazon search test"
      [Documentation]  This is some basic info about the test
@@ -109,6 +146,13 @@ User must sign in to check out "Amazon search test"
     Wait Until Page Contains  Added to Cart
     Click Link  id=hlb-ptc-btn-native
     close browser
+
+
+
+
+
+
+
 
 
 *** Keywords ***
